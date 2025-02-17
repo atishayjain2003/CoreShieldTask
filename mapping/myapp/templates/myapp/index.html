@@ -4,39 +4,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenStreetMap with Circle Input</title>
-
- 
+  <title>Coreshield Technology</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-
-  
   <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+  <style>
+    #map {
+      height: 5000px;
+      width: 100%;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
 
-  
+  <!-- Form to create a circle -->
   <form id="circleForm">
-      <label for="latitude">Latitude(user input):</label>
+      <label for="latitude">Latitude (User Input):</label>
       <input type="number" id="latitude" step="any" required>
 
-      <label for="longitude">Longitude(user input):</label>
+      <label for="longitude">Longitude (User Input):</label>
       <input type="number" id="longitude" step="any" required>
 
-      <label for="radius">Radius (user input in meters):</label>
+      <label for="radius">Radius (User Input in meters):</label>
       <input type="number" id="radius" required>
 
       <button type="submit">Create Circle</button>
   </form>
 
+  <!-- Live Location Form -->
+  <form id="Livelocation">
+    <button id="myButton" type="button">Click to Get Live Location</button>
+
+    <label for="finalLatitude">Final Latitude (User Input):</label>
+    <input type="number" id="finalLatitude" step="any" required>
+
+    <label for="finalLongitude">Final Longitude (User Input):</label>
+    <input type="number" id="finalLongitude" step="any" required>
+
+    <button type="submit" id="drawPolyline">Find Route</button>
+  </form>
+
+  <!-- Display live location coordinates -->
+  <p id="liveCoords"></p>
+  <!-- Display final location coordinates -->
+  <p id="finalLocationDisplay"></p>
+
+  <!-- Display estimated time -->
+  <p id="estimatedTime">Estimated Time: Not Calculated</p>
+
+  <!-- Map Container -->
   <div id="map"></div>
 
-  
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
-  
+  <script src="https://unpkg.com/leaflet-routing-machine@3.2.3/dist/leaflet-routing-machine.js"></script>
   <script src="{% static 'myapp/js/map.js' %}"></script>
-
+  
 </body>
 </html>
