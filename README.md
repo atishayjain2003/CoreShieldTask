@@ -15,9 +15,9 @@ My approach and learning:
 2. Went through a quick tutorial to understand the use cases and working and it was damn helpful
 3. Added simple features with the help of documentation and chat gpt
 4. PS: I now realise the value of documentation even more 
+5. I started with adding the figure functionality first but towards the later part had to use chat gpt extensively to develop the routes mechanism and deliver estimated time of arrival 
 
 How to run the project
 1. Clone the repo and install and activate virtual environment through commands "virtualenv env" and "env/scripts/activate"
 2. Install the dependencies 
 3. Go to the project directory and run the command "python manage.py runserver"
-4. I might also add a shared link but for now, python manage.py will do the work"
